@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pro1/gen/assets.gen.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,10 +26,10 @@ class ProfilePage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
             colors: [
-              Colors.grey[900]!,
+              Color(0xff1e1e1e),
               Colors.black,
             ],
           ),
@@ -37,12 +38,10 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 400),
-                child: Image.asset(
-                  'assets/profile_removebg-preview_2_.jpeg',
-                  fit: BoxFit.contain,
-                ),
+              Image.asset(
+                Assets.profileRemovebgPreviewPng.path,
+                fit: BoxFit.contain,
+                height: MediaQuery.of(context).size.height / 1.8,
               ),
               SizedBox(height: 16),
               Text(
